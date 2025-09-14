@@ -19,10 +19,10 @@ const Header = () => {
 
   return (
     <motion.header
-      initial={{ y: -100 }}
+      initial={{ y: -200 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.6 }}
-      className="bg-white/95 backdrop-blur-sm shadow-lg sticky top-0 z-50"
+      transition={{ duration: 0.5 }}
+      className="bg-white/65 backdrop-blur-sm shadow-lg sticky top-0 z-50"
     >
       <div className="container mx-auto px-1 py-1">
         <div className="flex items-center justify-between">

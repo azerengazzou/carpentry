@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles, Award, Users, Hammer } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -38,49 +37,50 @@ const Home = () => {
     <div>
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center bg-fixed"
           style={{
-            backgroundImage: "url('https://images.pexels.com/photos/1080696/pexels-photo-1080696.jpeg?auto=compress&cs=tinysrgb&w=1920')"
+            backgroundImage: "url('/img.jpg')",
           }}
         >
           <div className="absolute inset-0 bg-black/50"></div>
         </div>
-        
-        <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
-          <motion.h1 
+
+        <div className="relative z-50 text-center text-gray-50 px-1 max-w-6xl mx-auto">
+          <motion.h1
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-4xl md:text-6xl font-bold mb-6"
+            className="text-3xl md:text-5xl font-bold mb-5"
           >
-            L'Art du Bois à l'État Pur
+            L’Excellence du Bois sur Mesure
           </motion.h1>
-          
-          <motion.p 
+
+          <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl md:text-2xl mb-8 text-stone-200"
+            className="text-xl md:text-1xl lg:text-2xl mb-10 text-stone-200 leading-relaxed max-w-1xl mx-auto text-center"
           >
-            Depuis 1995, nous transformons vos rêves en réalité avec notre savoir-faire artisanal et notre passion pour le bois de qualité
+            Depuis 1995, notre menuiserie transforme vos projets en œuvres d’art sur mesure.Spécialistes du bois haut de gamme pour villas, résidences de prestige et mobilier unique,
+            nous allions savoir-faire artisanal et design élégant pour créer des espaces et meubles qui inspirent.
           </motion.p>
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
-            <Link 
-              to="/portfolio" 
-              className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 rounded-lg font-semibold flex items-center space-x-2 transition-colors group"
+            <Link
+              to="/portfolio"
+              className="bg-amber-800 hover:bg-amber-600 text-white px-8 py-4 rounded-lg font-semibold flex items-center space-x-2 transition-colors group"
             >
               <span>Découvrir nos réalisations</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
-            <Link 
-              to="/quote" 
+            <Link
+              to="/quote"
               className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-stone-800 transition-colors"
             >
               Demander un devis
@@ -89,14 +89,14 @@ const Home = () => {
         </div>
 
         {/* Scroll indicator */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1 }}
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
         >
           <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
-            <motion.div 
+            <motion.div
               animate={{ y: [0, 12, 0] }}
               transition={{ duration: 1.5, repeat: Infinity }}
               className="w-1 h-3 bg-white rounded-full mt-2"
@@ -106,16 +106,16 @@ const Home = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gray-100">
         <div className="container mx-auto px-4">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-stone-800 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-stone-900 mb-4">
               Nos Services d'Excellence
             </h2>
             <p className="text-xl text-stone-600 max-w-3xl mx-auto">
@@ -125,7 +125,7 @@ const Home = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {services.map((service, index) => (
-              <motion.div 
+              <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -147,7 +147,7 @@ const Home = () => {
       {/* Stats Section */}
       <section className="py-20 bg-stone-800 text-white">
         <div className="container mx-auto px-4">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -164,7 +164,7 @@ const Home = () => {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
-              <motion.div 
+              <motion.div
                 key={index}
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
@@ -185,7 +185,7 @@ const Home = () => {
       {/* CTA Section */}
       <section className="py-20 bg-amber-100">
         <div className="container mx-auto px-4 text-center">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -198,15 +198,15 @@ const Home = () => {
               Contactez-nous dès aujourd'hui pour une consultation gratuite et découvrez comment nous pouvons transformer votre espace
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link 
-                to="/quote" 
+              <Link
+                to="/quote"
                 className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 rounded-lg font-semibold flex items-center space-x-2 transition-colors group"
               >
                 <span>Obtenir un devis gratuit</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
-              <Link 
-                to="/contact" 
+              <Link
+                to="/contact"
                 className="bg-transparent border-2 border-amber-600 text-amber-600 px-8 py-4 rounded-lg font-semibold hover:bg-amber-600 hover:text-white transition-colors"
               >
                 Nous contacter

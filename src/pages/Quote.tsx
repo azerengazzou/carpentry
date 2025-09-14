@@ -65,10 +65,10 @@ const Quote = () => {
     setIsSubmitting(true);
 
     try {
-      // Configuration EmailJS (remplacez par vos vraies clés)
-      const serviceID = 'YOUR_SERVICE_ID';
-      const templateID = 'YOUR_TEMPLATE_ID';
-      const userID = 'YOUR_USER_ID';
+      // EmailJS configuration
+      const serviceID = 'service ID';
+      const templateID = 'template ID';
+      const userID = 'EmailJS public key';
 
       const templateParams = {
         to_email: 'secazerengazzou@gmail.com',
@@ -80,29 +80,23 @@ const Quote = () => {
         budget: formData.budget,
         timeline: formData.timeline,
         address: formData.address,
-        message: `
-Nouvelle demande de devis:
-
-Nom: ${formData.name}
-Email: ${formData.email}
-Téléphone: ${formData.phone}
-Type de projet: ${formData.projectType}
-Budget estimatif: ${formData.budget}
-Délai souhaité: ${formData.timeline}
-Adresse: ${formData.address}
-
-Description du projet:
-${formData.description}
-
-${files ? `Nombre de fichiers joints: ${files.length}` : 'Aucun fichier joint'}
-        `
+        message: `Nouvelle demande de devis:
+          Nom: ${formData.name}
+          Email: ${formData.email}
+          Téléphone: ${formData.phone}
+          Type de projet: ${formData.projectType}
+          Budget estimatif: ${formData.budget}
+          Délai souhaité: ${formData.timeline}
+          Adresse: ${formData.address}
+          Description du projet:
+          ${formData.description}
+          ${files ? `Nombre de fichiers joints: ${files.length}` : 'Aucun fichier joint'}`
       };
 
-      // Pour cette démo, on simule l'envoi d'email
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      console.log('Email envoyé avec les données:', templateParams);
-      
+      await emailjs.send(serviceID, templateID, templateParams, userID);
+
+      console.log('Email envoyé avec succès:', templateParams);
+
       setIsSuccess(true);
       setFormData({
         name: '',
@@ -122,6 +116,7 @@ ${files ? `Nombre de fichiers joints: ${files.length}` : 'Aucun fichier joint'}
       setIsSubmitting(false);
     }
   };
+
 
   if (isSuccess) {
     return (
@@ -162,7 +157,7 @@ ${files ? `Nombre de fichiers joints: ${files.length}` : 'Aucun fichier joint'}
               Demander un Devis
             </h1>
             <p className="text-xl text-stone-600 max-w-3xl mx-auto">
-              Parlez-nous de votre projet en détail. Plus nous en saurons sur vos besoins et vos attentes, 
+              Parlez-nous de votre projet en détail. Plus nous en saurons sur vos besoins et vos attentes,
               plus nous pourrons vous proposer une solution sur mesure et un devis précis.
             </p>
           </motion.div>

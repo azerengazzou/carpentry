@@ -33,6 +33,7 @@ const Header = () => {
                 src="/logo.png"
                 alt="Logo"
                 className="w-20 h-20 object-contain"
+                loading="eager"
               />
             </div>
             <div>

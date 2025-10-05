@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { Award, Users, Heart, Leaf } from 'lucide-react';
 
@@ -53,7 +52,7 @@ const About = () => {
       <section className="relative py-20 bg-gradient-to-br from-amber-100 to-stone-100">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
@@ -62,29 +61,29 @@ const About = () => {
                 Notre Histoire, Notre Passion
               </h1>
               <p className="text-xl text-stone-600 mb-6 leading-relaxed">
-                Depuis 1995, Menuiserie Boukadida perpétue la tradition artisanale tunisienne 
-                en alliant savoir-faire ancestral et techniques modernes pour créer des pièces 
+                Depuis 2007, Menuiserie Boukadida perpétue la tradition artisanale tunisienne
+                en alliant savoir-faire ancestral et techniques modernes pour créer des pièces
                 d'exception qui traversent les générations.
               </p>
               <p className="text-lg text-stone-600 leading-relaxed">
-                Notre atelier familial s'est bâti une réputation d'excellence grâce à notre 
+                Notre atelier familial s'est bâti une réputation d'excellence grâce à notre
                 engagement constant envers la qualité, l'innovation et la satisfaction de nos clients.
               </p>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative"
             >
-              <img 
+              <img
                 src="https://images.pexels.com/photos/5974062/pexels-photo-5974062.jpeg?auto=compress&cs=tinysrgb&w=800"
                 alt="Atelier menuiserie"
                 className="rounded-2xl shadow-2xl"
               />
               <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg">
-                <div className="text-3xl font-bold text-amber-600">25+</div>
+                <div className="text-3xl font-bold text-amber-600">18+</div>
                 <div className="text-stone-600">Années d'expertise</div>
               </div>
             </motion.div>
@@ -95,7 +94,7 @@ const About = () => {
       {/* Timeline Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -113,14 +112,14 @@ const About = () => {
           <div className="max-w-4xl mx-auto">
             <div className="relative">
               <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-amber-200"></div>
-              
+
               {[
-                { year: "1995", title: "Création de l'entreprise", description: "Mohamed Boukadida fonde l'atelier avec une vision : créer des meubles d'exception" },
-                { year: "2005", title: "Expansion de l'atelier", description: "Agrandissement des locaux et acquisition d'équipements de pointe" },
-                { year: "2015", title: "Nouvelle génération", description: "Amira et Karim rejoignent l'entreprise, apportant innovation et créativité" },
-                { year: "2025", title: "Vision future", description: "Développement durable et technologies avancées au service de l'artisanat" }
+                { year: "2007", title: "Création de l'entreprise", description: "Mohamed Boukadida fonde l'atelier avec une vision : créer des meubles d'exception" },
+                { year: "2012", title: "Expansion de l'atelier", description: "Agrandissement des locaux et acquisition d'équipements de pointe" },
+                { year: "1016", title: "Nouvelle génération", description: "Yassine et Karim rejoignent l'entreprise, apportant innovation et créativité" },
+                { year: "2024", title: "Vision future", description: "Développement durable et technologies avancées au service de l'artisanat" }
               ].map((item, index) => (
-                <motion.div 
+                <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -146,7 +145,7 @@ const About = () => {
       {/* Values Section */}
       <section className="py-20 bg-stone-50">
         <div className="container mx-auto px-4">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -163,7 +162,7 @@ const About = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
-              <motion.div 
+              <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -182,10 +181,10 @@ const About = () => {
         </div>
       </section>
 
-      {/* Team Section */}
+      {/* 
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -202,7 +201,7 @@ const About = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {team.map((member, index) => (
-              <motion.div 
+              <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -211,7 +210,7 @@ const About = () => {
                 className="text-center group"
               >
                 <div className="relative mb-6">
-                  <img 
+                  <img
                     src={member.image}
                     alt={member.name}
                     className="w-48 h-48 mx-auto rounded-full object-cover shadow-lg group-hover:shadow-xl transition-shadow"
@@ -225,6 +224,7 @@ const About = () => {
           </div>
         </div>
       </section>
+      Team Section */}
     </div>
   );
 };

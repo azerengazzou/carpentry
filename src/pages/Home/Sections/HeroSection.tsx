@@ -30,7 +30,7 @@ const HeroSection = () => {
                     transition={{ duration: 0.8, delay: 0.2 }}
                     className="text-xl md:text-1xl lg:text-2xl mb-10 text-stone-200 leading-relaxed max-w-1xl mx-auto text-center"
                 >
-                    Depuis 1995, notre menuiserie transforme vos projets en œuvres d’art sur mesure.Spécialistes du bois haut de gamme pour villas, résidences de prestige et mobilier unique,
+                    Depuis 2007, notre menuiserie transforme vos projets en œuvres d’art sur mesure. Spécialistes du bois haut de gamme pour villas, résidences de prestige et mobilier unique,
                     nous allions savoir-faire artisanal et design élégant pour créer des espaces et meubles qui inspirent.
                 </motion.p>
 

@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 
 const StatsSection = () => {
     const stats = [
-        { number: "25+", label: "Années d'expérience" },
-        { number: "500+", label: "Projets réalisés" },
+        { number: "18+", label: "Années d'expérience" },
+        { number: "300+", label: "Projets réalisés" },
         { number: "98%", label: "Clients satisfaits" },
-        { number: "15", label: "Artisans qualifiés" }
+        { number: "13", label: "Artisans qualifiés" }
     ];
     return (
         <section className="py-20 bg-stone-800 text-white">

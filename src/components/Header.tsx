@@ -38,7 +38,7 @@ const Header = () => {
             </div>
             <div>
               <h1 className="text-xl font-bold text-stone-800">Menuiserie Boukadida</h1>
-              <p className="text-sm text-stone-600">Artisan du bois depuis 1995</p>
+              <p className="text-sm text-stone-600">Artisan du bois depuis 2007</p>
             </div>
           </Link>
 

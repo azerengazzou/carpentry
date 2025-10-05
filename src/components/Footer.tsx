@@ -1,4 +1,3 @@
-import React from 'react';
 import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Linkedin } from 'lucide-react';
 
 const Footer = () => {
@@ -12,15 +11,15 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Phone className="w-4 h-4 text-amber-400" />
-                <span>+216 20 123 456</span>
+                <span>+216 (24 012 822 - 55 069 320) </span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-4 h-4 text-amber-400" />
-                <span>contact@menuiserie-boukadida.tn</span>
+                <span>mboukadida1993@gmail.com</span>
               </div>
               <div className="flex items-start space-x-3">
                 <MapPin className="w-4 h-4 text-amber-400 mt-1" />
-                <span>123 Avenue Habib Bourguiba<br />Tunis, Tunisie</span>
+                <span>Rue de saraiech<br />M'saken, Sousse, Tunisie</span>
               </div>
             </div>
           </div>
@@ -45,8 +44,7 @@ const Footer = () => {
                 <Clock className="w-4 h-4 text-amber-400" />
                 <div>
                   <p>Lun - Ven: 8h - 18h</p>
-                  <p>Samedi: 8h - 16h</p>
-                  <p>Dimanche: Fermé</p>
+                  <p>Samedi et Dimanche: 8h - 16h</p>
                 </div>
               </div>
             </div>
@@ -56,15 +54,17 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-semibold mb-4 text-amber-400">Suivez-nous</h3>
             <div className="flex space-x-4">
-              <a href="#" className="p-2 bg-stone-700 rounded-lg hover:bg-amber-700 transition-colors">
+              <a href="https://www.facebook.com/profile.php?id=100063622928513" className="p-2 bg-stone-700 rounded-lg hover:bg-amber-700 transition-colors" target='_blank' rel='noopener noreferrer'>
                 <Facebook className="w-5 h-5" />
               </a>
+              {/* 
               <a href="#" className="p-2 bg-stone-700 rounded-lg hover:bg-amber-700 transition-colors">
                 <Instagram className="w-5 h-5" />
               </a>
               <a href="#" className="p-2 bg-stone-700 rounded-lg hover:bg-amber-700 transition-colors">
                 <Linkedin className="w-5 h-5" />
               </a>
+              */}
             </div>
           </div>
         </div>

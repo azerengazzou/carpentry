@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { Phone, Mail, MapPin, Clock, MessageCircle, Navigation } from 'lucide-react';
 
@@ -7,29 +6,29 @@ const Contact = () => {
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Téléphone",
-      content: "+216 20 123 456",
-      subContent: "+216 70 456 789",
-      action: "tel:+21620123456"
+      content: "+216 24 012 822",
+      subContent: "+216 55 069 320",
+      action: "tel:+21655069320"
     },
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
-      content: "contact@menuiserie-boukadida.tn",
+      content: "mboukadida1993@gmail.com",
       subContent: "devis@menuiserie-boukadida.tn",
-      action: "mailto:contact@menuiserie-boukadida.tn"
+      action: "mailto:mboukadida1993@gmail.com"
     },
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Adresse",
-      content: "123 Avenue Habib Bourguiba",
-      subContent: "1000 Tunis, Tunisie",
-      action: "https://maps.google.com"
+      content: "Rue de saraiech",
+      subContent: "M'saken, Sousse, Tunisie",
+      action: "https://www.google.com/maps/place/Sariech/@35.7421609,10.5758635,183m/data=!3m1!1e3!4m6!3m5!1s0x12fdf5d69e8c2ff7:0x4782203bfaa145a2!8m2!3d35.747925!4d10.569471!16s%2Fg%2F11sdwps521?entry=ttu&g_ep=EgoyMDI1MTAwMS4wIKXMDSoASAFQAw%3D%3D"
     },
     {
       icon: <Clock className="w-6 h-6" />,
       title: "Horaires",
-      content: "Lun - Ven: 8h00 - 18h00",
-      subContent: "Sam: 8h00 - 16h00"
+      content: "Lun - Ven: 8h - 18h",
+      subContent: "Samedi et Dimanche: 8h - 16h"
     }
   ];
 
@@ -56,7 +55,7 @@ const Contact = () => {
               Contactez-Nous
             </h1>
             <p className="text-xl text-stone-600 max-w-3xl mx-auto">
-              Notre équipe est à votre disposition pour répondre à toutes vos questions 
+              Notre équipe est à votre disposition pour répondre à toutes vos questions
               et vous accompagner dans la réalisation de vos projets les plus ambitieux.
             </p>
           </motion.div>
@@ -66,7 +65,7 @@ const Contact = () => {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            
+
             {/* Contact Information */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -76,7 +75,7 @@ const Contact = () => {
               <h2 className="text-3xl font-bold text-stone-800 mb-8">
                 Informations de Contact
               </h2>
-              
+
               <div className="space-y-6 mb-8">
                 {contactInfo.map((item, index) => (
                   <motion.div
@@ -139,7 +138,7 @@ const Contact = () => {
               >
                 <h3 className="font-semibold text-stone-800 mb-3">🏠 Visite de notre showroom</h3>
                 <p className="text-stone-600 text-sm mb-4">
-                  Venez découvrir nos créations dans notre showroom. Rendez-vous sur rendez-vous pour 
+                  Venez découvrir nos créations dans notre showroom. Rendez-vous sur rendez-vous pour
                   une visite personnalisée et des conseils d'experts.
                 </p>
                 <p className="text-stone-700 font-medium">
@@ -158,7 +157,7 @@ const Contact = () => {
               <h2 className="text-3xl font-bold text-stone-800 mb-8">
                 Notre Localisation
               </h2>
-              
+
               {/* Map Container */}
               <div className="relative h-96 bg-stone-200 rounded-xl overflow-hidden shadow-lg">
                 {/* Placeholder pour Google Maps */}
@@ -167,11 +166,11 @@ const Contact = () => {
                     <MapPin className="w-16 h-16 text-stone-600 mx-auto mb-4" />
                     <p className="text-stone-700 font-semibold">Carte Google Maps</p>
                     <p className="text-stone-600 text-sm">
-                      123 Avenue Habib Bourguiba, Tunis
+                      PHX9+5Q, M'saken, Tunisie
                     </p>
                   </div>
                 </div>
-                
+
                 {/* You can replace this with actual Google Maps embed */}
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3192.496355763344!2d10.18145531525452!3d36.79915927996477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12e2cb7454a5e8a3%3A0x2f8b5b0d8e0a5d1!2sAvenue%20Habib%20Bourguiba%2C%20Tunis%2C%20Tunisia!5e0!3m2!1sen!2s!4v1635789456789"
@@ -205,8 +204,8 @@ const Contact = () => {
                 </h3>
                 <ul className="text-stone-600 text-sm space-y-2">
                   <li>• Parking gratuit disponible devant l'atelier</li>
-                  <li>• Station de métro la plus proche : République (500m)</li>
-                  <li>• Arrêt de bus : Avenue Bourguiba (100m)</li>
+                  <li>• Station de métro la plus proche : République (PHHX+GW M'saken, Tunisie)</li>
+                  <li>• Arrêt de bus : Centre ville M'saken (800m)</li>
                   <li>• Accès facile depuis l'autoroute A1</li>
                 </ul>
               </div>

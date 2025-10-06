@@ -7,15 +7,14 @@ const Contact = () => {
       icon: <Phone className="w-6 h-6" />,
       title: "Téléphone",
       content: "+216 24 012 822",
-      subContent: "+216 55 069 320",
-      action: "tel:+21655069320"
+      action: "tel:+21624012822"
     },
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
-      content: "mboukadida1993@gmail.com",
-      subContent: "devis@menuiserie-boukadida.tn",
-      action: "mailto:mboukadida1993@gmail.com"
+      content: "idrissmenuiserie@gmail.com",
+      subContent: "idrissmenuiserie@gmail.com",
+      action: "mailto:idrissmenuiserie@gmail.com"
     },
     {
       icon: <MapPin className="w-6 h-6" />,
@@ -36,7 +35,7 @@ const Contact = () => {
     {
       name: "WhatsApp",
       icon: <MessageCircle className="w-6 h-6" />,
-      link: "https://wa.me/21620123456",
+      link: "https://wa.me/21624012822",
       color: "bg-green-500 hover:bg-green-600"
     }
   ];
@@ -118,7 +117,7 @@ const Contact = () => {
                     </motion.a>
                   ))}
                   <motion.a
-                    href="tel:+21620123456"
+                    href="tel:+21624012822"
                     className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-lg font-semibold flex items-center space-x-2 transition-colors"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}

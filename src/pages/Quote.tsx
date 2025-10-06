@@ -65,13 +65,18 @@ const Quote = () => {
     setIsSubmitting(true);
 
     try {
-      // EmailJS configuration
-      const serviceID = 'service ID';
-      const templateID = 'template ID';
-      const userID = 'EmailJS public key';
+      // EmailJS configuration - Replace with your actual values
+      const serviceID = 'service_vjim59q'; // Your EmailJS service ID
+      const templateID = 'template_ih9oskc'; // Your EmailJS template ID
+      const userID = 'pBenPuS8DQLmKtziX'; // Your EmailJS public key
 
-      const templateParams = {
-        to_email: 'secazerengazzou@gmail.com',
+      // Multiple recipients
+      const recipients = [
+        'secazerengazzou@gmail.com',
+        'idrissmenuiserie@gmail.com',
+      ];
+
+      const baseTemplateParams = {
         from_name: formData.name,
         from_email: formData.email,
         phone: formData.phone,
@@ -93,9 +98,17 @@ const Quote = () => {
           ${files ? `Nombre de fichiers joints: ${files.length}` : 'Aucun fichier joint'}`
       };
 
-      await emailjs.send(serviceID, templateID, templateParams, userID);
+      // Send email to each recipient
+      const emailPromises = recipients.map(email =>
+        emailjs.send(serviceID, templateID, {
+          ...baseTemplateParams,
+          to_email: email
+        }, userID)
+      );
 
-      console.log('Email envoyé avec succès:', templateParams);
+      await Promise.all(emailPromises);
+
+      console.log('Emails envoyés avec succès à:', recipients);
 
       setIsSuccess(true);
       setFormData({
@@ -111,7 +124,19 @@ const Quote = () => {
       setFiles(null);
     } catch (error) {
       console.error('Erreur lors de l\'envoi:', error);
-      alert('Une erreur s\'est produite lors de l\'envoi. Veuillez réessayer.');
+
+      // More specific error handling
+      let errorMessage = 'Une erreur s\'est produite lors de l\'envoi.';
+
+      if (error instanceof Error) {
+        if (error.message.includes('Invalid service ID')) {
+          errorMessage = 'Configuration EmailJS invalide. Contactez l\'administrateur.';
+        } else if (error.message.includes('network')) {
+          errorMessage = 'Problème de connexion. Vérifiez votre internet.';
+        }
+      }
+
+      alert(errorMessage + ' Veuillez réessayer.');
     } finally {
       setIsSubmitting(false);
     }

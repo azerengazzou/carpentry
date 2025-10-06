@@ -65,10 +65,10 @@ const Quote = () => {
     setIsSubmitting(true);
 
     try {
-      // EmailJS configuration
-      const serviceID = 'service ID';
-      const templateID = 'template ID';
-      const userID = 'EmailJS public key';
+      // EmailJS configuration - Replace with your actual values
+      const serviceID = 'service_vjim59q'; // Your EmailJS service ID
+      const templateID = 'template_ih9oskc'; // Your EmailJS template ID
+      const userID = 'pBenPuS8DQLmKtziX'; // Your EmailJS public key
 
       // Multiple recipients
       const recipients = [
@@ -124,7 +124,19 @@ const Quote = () => {
       setFiles(null);
     } catch (error) {
       console.error('Erreur lors de l\'envoi:', error);
-      alert('Une erreur s\'est produite lors de l\'envoi. Veuillez réessayer.');
+
+      // More specific error handling
+      let errorMessage = 'Une erreur s\'est produite lors de l\'envoi.';
+
+      if (error instanceof Error) {
+        if (error.message.includes('Invalid service ID')) {
+          errorMessage = 'Configuration EmailJS invalide. Contactez l\'administrateur.';
+        } else if (error.message.includes('network')) {
+          errorMessage = 'Problème de connexion. Vérifiez votre internet.';
+        }
+      }
+
+      alert(errorMessage + ' Veuillez réessayer.');
     } finally {
       setIsSubmitting(false);
     }

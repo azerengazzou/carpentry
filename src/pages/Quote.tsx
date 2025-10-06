@@ -70,8 +70,13 @@ const Quote = () => {
       const templateID = 'template ID';
       const userID = 'EmailJS public key';
 
-      const templateParams = {
-        to_email: 'secazerengazzou@gmail.com',
+      // Multiple recipients
+      const recipients = [
+        'secazerengazzou@gmail.com',
+        'idrissmenuiserie@gmail.com',
+      ];
+
+      const baseTemplateParams = {
         from_name: formData.name,
         from_email: formData.email,
         phone: formData.phone,
@@ -93,9 +98,17 @@ const Quote = () => {
           ${files ? `Nombre de fichiers joints: ${files.length}` : 'Aucun fichier joint'}`
       };
 
-      await emailjs.send(serviceID, templateID, templateParams, userID);
+      // Send email to each recipient
+      const emailPromises = recipients.map(email =>
+        emailjs.send(serviceID, templateID, {
+          ...baseTemplateParams,
+          to_email: email
+        }, userID)
+      );
 
-      console.log('Email envoyé avec succès:', templateParams);
+      await Promise.all(emailPromises);
+
+      console.log('Emails envoyés avec succès à:', recipients);
 
       setIsSuccess(true);
       setFormData({
